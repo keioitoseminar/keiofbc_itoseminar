@@ -1,0 +1,389 @@
+/* ===================================================================
+   index.html 専用スタイル
+=================================================================== */
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--space-xl);
+}
+
+.hero-orbit-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1400px;
+  height: 1400px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.hero-orbit-bg .orbit-ring {
+  fill: none;
+  stroke: var(--color-sky);
+  stroke-width: 1;
+}
+
+.hero-orbit-bg .orbit-ring-1 {
+  animation: orbit-rotate 90s linear infinite;
+  transform-origin: center;
+}
+
+.hero-orbit-bg .orbit-ring-2 {
+  animation: orbit-rotate 140s linear infinite reverse;
+  transform-origin: center;
+  opacity: 0.6;
+}
+
+.hero-star {
+  position: absolute;
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-caption);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-sky-night);
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  max-width: 880px;
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--color-sky-night);
+}
+
+.hero-lede {
+  font-size: 1.15rem;
+  max-width: 520px;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-lg);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.hero-meta {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-md);
+  max-width: 700px;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero-meta-item .num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-sky-night);
+}
+
+.hero-meta-item .label {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+  .hero-orbit-bg {
+    width: 900px;
+    height: 900px;
+  }
+  .hero-meta {
+    gap: var(--space-md);
+  }
+}
+
+/* ---------- Intro / About teaser ---------- */
+
+.intro {
+  background: var(--color-card);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.intro-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: var(--space-md);
+}
+
+.intro-text p {
+  margin-bottom: var(--space-sm);
+}
+
+.intro-figure {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-figure-card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.intro-figure-card .quote-mark {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--color-sky);
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.intro-figure-card p {
+  font-family: var(--font-caption);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+.intro-figure-card .by {
+  margin-top: var(--space-sm);
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 760px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* ---------- Pillars (3 focus cards) ---------- */
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.pillar-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  padding: var(--space-lg) var(--space-md);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-sky-deep);
+  box-shadow: 0 20px 40px -20px rgba(14, 42, 61, 0.18);
+}
+
+.pillar-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--space-md);
+  color: var(--color-sky-night);
+}
+
+.pillar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+.pillar-card p {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Timeline teaser (activity highlight) ---------- */
+
+.timeline-teaser {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-teaser::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(168, 212, 232, 0.18);
+  border-radius: 50%;
+}
+
+.timeline-teaser .section-head h2,
+.timeline-teaser .section-head .eyebrow {
+  color: var(--color-paper);
+}
+
+.timeline-teaser .section-head .eyebrow {
+  color: var(--color-sky);
+}
+
+.timeline-teaser .section-head .eyebrow::before {
+  background: var(--color-sky);
+}
+
+.timeline-teaser .section-head p {
+  color: rgba(247, 250, 251, 0.65);
+}
+
+.tl-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-top: 1px solid rgba(247, 250, 251, 0.12);
+  align-items: baseline;
+}
+
+.tl-row:last-child {
+  border-bottom: 1px solid rgba(247, 250, 251, 0.12);
+}
+
+.tl-year {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-sky);
+}
+
+.tl-content h4 {
+  color: var(--color-paper);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.tl-content p {
+  color: rgba(247, 250, 251, 0.6);
+  font-size: 0.93rem;
+}
+
+@media (max-width: 600px) {
+  .tl-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+
+/* ---------- Recruit CTA banner ---------- */
+
+.recruit-banner {
+  background: linear-gradient(135deg, var(--color-sky) 0%, var(--color-sky-deep) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.recruit-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.recruit-inner .eyebrow {
+  color: var(--color-ink);
+}
+
+.recruit-inner .eyebrow::before {
+  background: var(--color-ink);
+}
+
+.recruit-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--color-ink);
+  max-width: 520px;
+}
+
+.recruit-text p {
+  color: var(--color-sky-night);
+  margin-top: var(--space-xs);
+  max-width: 480px;
+}
+
+.recruit-banner .btn-primary {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.recruit-banner .btn-primary:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+@media (max-width: 760px) {
+  .recruit-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
