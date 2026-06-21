@@ -72,8 +72,9 @@
 .profile-card .role {
   font-size: 0.85rem;
   color: var(--color-sky-night);
-  font-family: var(--font-caption);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
   margin-bottom: var(--space-md);
 }
 
@@ -167,10 +168,11 @@
 }
 
 .stat-cell .label {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--color-ink-soft);
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
   display: block;
+  line-height: 1.5;
 }
 
 @media (max-width: 700px) {
@@ -245,8 +247,9 @@
 }
 
 .activity-date {
-  font-family: var(--font-caption);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 600;
   color: var(--color-sky-night);
   font-size: 1rem;
   margin-bottom: 0.4rem;
@@ -430,4 +433,31 @@
   .join-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- Plain list (about page activity / feature lists) ---------- */
+
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.plain-list li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 0.55rem;
+  color: var(--color-ink-soft);
+  font-size: 0.97rem;
+}
+
+.plain-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background: var(--color-sky-deep);
+  border-radius: 50%;
 }

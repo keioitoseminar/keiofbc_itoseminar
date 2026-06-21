@@ -56,9 +56,10 @@
 }
 
 .hero-eyebrow {
-  font-family: var(--font-caption);
-  font-style: italic;
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.95rem;
   color: var(--color-sky-night);
   letter-spacing: 0.12em;
   margin-bottom: var(--space-sm);
@@ -72,7 +73,7 @@
 }
 
 .hero h1 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--color-sky-night);
 }
 
@@ -182,8 +183,9 @@
 }
 
 .intro-figure-card p {
-  font-family: var(--font-caption);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
   font-size: 1.25rem;
   color: var(--color-ink);
   line-height: 1.6;
